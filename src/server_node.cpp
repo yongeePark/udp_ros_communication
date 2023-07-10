@@ -10,7 +10,7 @@
 using namespace ros;
 using namespace std;
 
-#define DF_UDP_PORTNUM      1234 
+#define DF_UDP_PORTNUM      16100 
 #define DF_UDP_SERVER_ADDR  "192.168.0.109"
 #define DF_UDP_CLIENT_ADDR  "192.168.0.2"
 #define DF_UDP_BUFFER_SIZE  256
@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     struct sockaddr_in ServerAddr;
     //struct struct_t_UDP           StrUDP;
     //struct sockaddr_in            MyAddr;
-    struct Pointcloud_data        pointcloud_data;
+    struct Pointcloud_data        TX_buff;
 
     // UDP Configuration
     // Socket Creation
@@ -99,12 +99,12 @@ int main(int argc, char** argv)
 
         // int8_t steerToSend = steering_angle * STEERING_RESOLUTION_GAIN 
 
-        pointcloud_data.header_1 = 80;
-        pointcloud_data.name=1234 ;
-        pointcloud_data.usrg_password = 1;
+        TX_buff.header_1 = 80;
+        TX_buff.name=1234 ;
+        TX_buff.usrg_password = 1;
 
 
-        sendto(Socket, (char*)&pointcloud_data, sizeof(pointcloud_data), 0, (struct sockaddr *)(&ServerAddr), sizeof(ServerAddr));
+        sendto(Socket, (char*)&TX_buff, sizeof(TX_buff), 0, (struct sockaddr *)(&ServerAddr), sizeof(ServerAddr));
         ROS_INFO("Send message!");
         // std::cout << "--------------------------------------------------------" << std::endl;
         // ROS_INFO("Steering cmd:  %f, Speed cmd : %f)", _server_to_send.steering_angle, _server_to_send.speed);

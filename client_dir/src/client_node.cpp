@@ -6,6 +6,8 @@
 #include <termios.h>
 #include <arpa/inet.h>
 
+#include <errno.h>
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
@@ -112,14 +114,21 @@ int main(int argc, char** argv)
     }
     
 
-    int temp_data;
+    ssize_t recv_result;
     int index = 0;
     std::cout<<"start main loop"<<std::endl;
     while(index<10000)
     {
         memset(StrUDP.RXBuffer, 0, sizeof(StrUDP.RXBuffer));
-        temp_data = recvfrom(StrUDP.Socket, StrUDP.RXBuffer, sizeof(StrUDP.RXBuffer), 0, (struct sockaddr *)(&StrUDP.ServerAddr), (socklen_t *)&size_addr);
+        recv_result = recvfrom(StrUDP.Socket, StrUDP.RXBuffer, sizeof(StrUDP.RXBuffer), 0, (struct sockaddr *)(&StrUDP.ServerAddr), (socklen_t *)&size_addr);
 
+        if (recv_result == -1) {
+        perror("recvfrom failed");
+        // or you can use printf with strerror
+        // printf("recvfrom failed: %s\n", strerror(errno));
+        // Handle the error or return from the function
+            // return 1;
+        }
         memcpy(&RX_buff, (Pointcloud_data*)StrUDP.RXBuffer, sizeof(Pointcloud_data));
 
 
@@ -127,7 +136,7 @@ int main(int argc, char** argv)
         double received_name = RX_buff.name;
         // double tmp_num_buf = RX_buff.tmp_num_double;
         // double out = _client_to_receive.out_pass;
-        std::cout<<"Temp data : "<<temp_data<<std::endl;
+        std::cout<<"Temp data : "<<recv_result<<std::endl;
         std::cout<<"name : "<<received_name<<std::endl;
         
     }

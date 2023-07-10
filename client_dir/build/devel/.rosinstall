@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/build/devel/setup.sh

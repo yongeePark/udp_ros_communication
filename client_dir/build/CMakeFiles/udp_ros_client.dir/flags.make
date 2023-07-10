@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/include
+CXX_INCLUDES = -I/home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir/include
 
 CXX_FLAGS = 
 

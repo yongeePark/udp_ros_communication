@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/usrg/.local/lib/python3.8/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/jaeyong/.local/lib/python3.8/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/usrg/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/jaeyong/.local/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usrg/catkin_ws/src/udp-ros-communcation/client_dir
+CMAKE_SOURCE_DIR = /home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/build
+CMAKE_BINARY_DIR = /home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/udp_ros_client.dir/clean
 CMakeFiles/udp_ros_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_ros_client.dir/build.make CMakeFiles/udp_ros_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_ros_client.dir/build.make CMakeFiles/udp_ros_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/build/CMakeFiles --progress-num=1,2 "Built target udp_ros_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir/build/CMakeFiles --progress-num=1,2 "Built target udp_ros_client"
 .PHONY : CMakeFiles/udp_ros_client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/udp_ros_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/udp_ros_client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/usrg/catkin_ws/src/udp-ros-communcation/client_dir/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaeyong/catkin_ws/src/udp_ros_communication/client_dir/build/CMakeFiles 0
 .PHONY : CMakeFiles/udp_ros_client.dir/rule
 
 # Convenience name for target.

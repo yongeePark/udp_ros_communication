@@ -59,34 +59,11 @@ struct Pointcloud_data
 #pragma pack(pop)
 
 
-class CLIENT_TO_RECEIVE
-{
-    public:
-        CLIENT_TO_RECEIVE();        
-        ~CLIENT_TO_RECEIVE();
-
-    // void VehCommandCallback(const ackermann_msgs::AckermannDriveStamped& msg);
- 
-};
-
-CLIENT_TO_RECEIVE::CLIENT_TO_RECEIVE() 
-{
-    // Constructor
-    std::cout<<"Running Constructor"<<std::endl;
-};
-
-CLIENT_TO_RECEIVE::~CLIENT_TO_RECEIVE() 
-{    
-    std::cout<<"Running deconstructor"<<std::endl;
-}
-
 
 // node main loop, for ROS
 int main(int argc, char** argv)
 {    
-    // node name initialization
-    // init(argc, argv, "UnmannedSol_UDP_RX");
-    
+
     printf("Initiate: Server_RX\n");
 
     int    Socket;
@@ -134,7 +111,6 @@ int main(int argc, char** argv)
         return -1;
     }
     
-    CLIENT_TO_RECEIVE _client_to_receive;
 
     int temp_data;
     int index = 0;
@@ -151,7 +127,8 @@ int main(int argc, char** argv)
         double received_name = RX_buff.name;
         // double tmp_num_buf = RX_buff.tmp_num_double;
         // double out = _client_to_receive.out_pass;
-        std::cout<<"passward : "<<received_name<<std::endl;
+        std::cout<<"Temp data : "<<temp_data<<std::endl;
+        std::cout<<"name : "<<received_name<<std::endl;
         
     }
 

@@ -13,7 +13,7 @@ using namespace std;
 #define DF_UDP_PORTNUM      1234 
 #define DF_UDP_SERVER_ADDR  "192.168.0.92"
 #define DF_UDP_CLIENT_ADDR  "192.168.0.2"
-#define DF_UDP_BUFFER_SIZE  128
+#define DF_UDP_BUFFER_SIZE  256
 
 class UDP_ROS_Server
 {

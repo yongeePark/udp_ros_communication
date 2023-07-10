@@ -15,7 +15,7 @@
 // using namespace ros;
 using namespace std;
 
-#define DF_UDP_BUFFER_SIZE  128
+#define DF_UDP_BUFFER_SIZE  256
 #define DF_UDP_PORTNUM      16100
 
 #define DF_UDP_SERVER_ADDR  "192.168.0.92"
@@ -146,7 +146,7 @@ int main(int argc, char** argv)
         memset(StrUDP.RXBuffer, 0, sizeof(StrUDP.RXBuffer));
         temp_data = recvfrom(StrUDP.Socket, StrUDP.RXBuffer, sizeof(StrUDP.RXBuffer), 0, (struct sockaddr *)(&StrUDP.ServerAddr), (socklen_t *)&size_addr);
 
-        memcpy(&RX_buff, (RX_message_data*)StrUDP.RXBuffer, sizeof(RX_message_data));
+        memcpy(&RX_buff, (Pointcloud_data*)StrUDP.RXBuffer, sizeof(Pointcloud_data));
 
 
         uint16_t passward = RX_buff.usrg_password;

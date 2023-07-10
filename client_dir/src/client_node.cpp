@@ -148,9 +148,10 @@ int main(int argc, char** argv)
 
 
         uint16_t password = RX_buff.usrg_password;
+        double received_name = RX_buff.name;
         // double tmp_num_buf = RX_buff.tmp_num_double;
         // double out = _client_to_receive.out_pass;
-        std::cout<<"passward : "<<password<<std::endl;
+        std::cout<<"passward : "<<received_name<<std::endl;
         
     }
 

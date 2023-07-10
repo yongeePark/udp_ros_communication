@@ -36,13 +36,6 @@ UDP_ROS_Server::~UDP_ROS_Server()
     ROS_INFO("SERVER_TO_SEND destructor.");
 }
 
-// void UDP_ROS_Server::floatCallback(const std_msgs::UInt16& msg)
-// {
-//     floatMsg = msg;
-// }
-
-
-
 #pragma pack(1)
 
 struct Pointcloud_data
@@ -53,13 +46,7 @@ struct Pointcloud_data
 
     uint16_t usrg_password;
     char we_know;
- /*   uint8_t veh_mode;
-    uint8_t brake_cmd;
-    int8_t  steer_cmd;
-    uint8_t powertrain_mode;
-    uint8_t speed_cmd;
-    uint8_t chk_sum_1;
-    uint8_t chk_sum_2;*/
+
 };
 
 #pragma pack()

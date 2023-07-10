@@ -18,7 +18,7 @@ using namespace std;
 #define DF_UDP_BUFFER_SIZE  128
 #define DF_UDP_PORTNUM      16100
 
-#define DF_UDP_SERVER_ADDR  "192.168.0.99"
+#define DF_UDP_SERVER_ADDR  "192.168.0.92"
 #define DF_UDP_CLIENT_ADDR  "192.168.0.2"	//"127.0.0.1" -> local 
 
 

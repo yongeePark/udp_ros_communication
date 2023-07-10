@@ -95,7 +95,7 @@ int main(int argc, char** argv)
 
     struct struct_t_UDP           StrUDP;
     struct sockaddr_in            MyAddr;
-    struct RX_message_data        RX_buff;
+    struct Pointcloud_data        RX_buff;
 
 
     // Socket Creation
@@ -149,10 +149,10 @@ int main(int argc, char** argv)
         memcpy(&RX_buff, (Pointcloud_data*)StrUDP.RXBuffer, sizeof(Pointcloud_data));
 
 
-        uint16_t passward = RX_buff.usrg_password;
-        double tmp_num_buf = RX_buff.tmp_num_double;
+        uint16_t password = RX_buff.usrg_password;
+        // double tmp_num_buf = RX_buff.tmp_num_double;
         // double out = _client_to_receive.out_pass;
-
+        std::cout<<"passward : "<<password<<std::endl;
         
     }
 

@@ -86,10 +86,8 @@ int main(int argc, char** argv)
 {    
     // node name initialization
     // init(argc, argv, "UnmannedSol_UDP_RX");
-
     
     printf("Initiate: Server_RX\n");
-    
 
     int    Socket;
 

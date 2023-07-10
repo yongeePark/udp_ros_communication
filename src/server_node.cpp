@@ -11,7 +11,7 @@ using namespace ros;
 using namespace std;
 
 #define DF_UDP_PORTNUM      1234 
-#define DF_UDP_SERVER_ADDR  "192.168.0.92"
+#define DF_UDP_SERVER_ADDR  "192.168.0.109"
 #define DF_UDP_CLIENT_ADDR  "192.168.0.2"
 #define DF_UDP_BUFFER_SIZE  256
 
@@ -114,41 +114,8 @@ int main(int argc, char** argv)
 
         pointcloud_data.header_1 = 80;
         pointcloud_data.name=1234 ;
+        pointcloud_data.usrg_password = 1;
 
-
-        // pointcloud_data.usrg_password = _server_to_send.floatMsg.data;
-        // pointcloud_data.we_know = 'f';
-	    // ROS_INFO("%d",TX_buff.usrg_password);
-
-
-        /*
-
-        if(!_server_to_send.joyMsg.buttons.empty())
-        {
-            if(_server_to_send.joyMsg.buttons.size() < 8)
-                return 0;
-            if(_server_to_send.joyMsg.buttons.at(7) == 1 )
-			{}
-                //TX_buff.powertrain_mode = 2; // 0 : neutral, 1: forward, 2: backward
-            // else if(_server_to_send.joyMsg.buttons.at(6) == 1 || (_server_to_send.turnMsg.data == true && _server_to_send.joyMsg.buttons.at(5) != 1)) //
-            // {
-            //     TX_buff.powertrain_mode = 0; // 0 : neutral, 1: forward, 2: backward
-            //     TX_buff.speed_cmd = _server_to_send.speed * SPEED_RESOLUTION_GAIN;
-            //     if(TX_buff.speed_cmd > 20)
-            //         TX_buff.speed_cmd = 20;
-            // }
-                
-            else
-            {
-                //TX_buff.powertrain_mode = 1; // 0 : neutral, 1: forward, 2: backward
-            }
-        }
-
-        //TX_buff.chk_sum_1 = 0;
-        //TX_buff.chk_sum_2 = 0;
-        
-
-        */
 
         sendto(Socket, (char*)&pointcloud_data, sizeof(pointcloud_data), 0, (struct sockaddr *)(&ServerAddr), sizeof(ServerAddr));
         ROS_INFO("Send message!");

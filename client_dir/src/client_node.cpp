@@ -36,6 +36,26 @@ struct RX_message_data
     uint16_t usrg_password;
     double tmp_num_double;
 };
+#pragma pack(1)
+
+struct Pointcloud_data
+{
+
+    uint16_t header_1;
+	double name;
+
+    uint16_t usrg_password;
+    char we_know;
+ /*   uint8_t veh_mode;
+    uint8_t brake_cmd;
+    int8_t  steer_cmd;
+    uint8_t powertrain_mode;
+    uint8_t speed_cmd;
+    uint8_t chk_sum_1;
+    uint8_t chk_sum_2;*/
+};
+
+#pragma pack()
 #pragma pack(pop)
 
 

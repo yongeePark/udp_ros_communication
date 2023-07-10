@@ -151,6 +151,7 @@ int main(int argc, char** argv)
         */
 
         sendto(Socket, (char*)&pointcloud_data, sizeof(pointcloud_data), 0, (struct sockaddr *)(&ServerAddr), sizeof(ServerAddr));
+        ROS_INFO("Send message!");
         // std::cout << "--------------------------------------------------------" << std::endl;
         // ROS_INFO("Steering cmd:  %f, Speed cmd : %f)", _server_to_send.steering_angle, _server_to_send.speed);
         // ROS_INFO("TX data to Unmanned: STEER: %d, SPEED : %d)", TX_buff.steer_cmd, TX_buff.speed_cmd);
